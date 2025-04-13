@@ -13,7 +13,7 @@ int main()
     int target;
     struct result ptr = newArrayWithInput();
     printFinalArray(ptr);
-    printf("\nEnter a number ==> ");
+    printf("\nEnter a Target number ==> ");
     scanf("%d", &target);
     findTwoSum(ptr, target);
 
@@ -51,17 +51,24 @@ void printFinalArray(struct result ptr)
 }
 void findTwoSum(struct result ptr, int target)
 {
+    int flag=0;
+    printf("Your Result is ==> ");
     for (int i = 0; i < ptr.size; i++)
     {
         for (int j = i; j < ptr.size; j++)
         {
             if ((*(ptr.p + i) + (*(ptr.p + j))) == target && i != j)
             {
+                flag=1;
 
                 printf("(%d,%d),", *(ptr.p + i), *(ptr.p + j));
                 break;
             }
         }
     }
+    if(flag!=1){
+        printf("Empty");
+    }else{
     printf("\b ");
+    }
 }
