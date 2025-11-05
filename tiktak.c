@@ -59,7 +59,7 @@ void main(){
   while(m){
     char c;
     printf("Enter position to play\nEnter q to exit\n");
-    scanf("%c",&c);
+    scanf(" %c",&c);
     if(c=='q'){
       m=0;
     }
